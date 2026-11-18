@@ -1,0 +1,10 @@
+PODDA OPTIMIZE SENSI LAB UPDATE
+
+- Sensitivity output scale expanded to 0–200.
+- Added an Other Android (Custom) device option with editable phone name and refresh rate.
+- DPI and refresh-rate inputs affect the estimated starting profile.
+- Profile copy output includes the selected device and 0–200 scale.
+- Removed the 3D Rig navigation item, hero button, and dedicated inspector section.
+- Kept the animated PODDA emblem and ambient background effects.
+
+Accuracy note: generated values are heuristic starting points, not verified device measurements or guaranteed game results. Test and tune in-game.

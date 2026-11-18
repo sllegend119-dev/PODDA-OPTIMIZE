@@ -1,0 +1,8 @@
+{
+  "name": "PODDA OPTIMIZE — Next-Gen Mobile Gaming Systems",
+  "description": "Android device sensitivity profiles and practical mobile gaming calibration guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
