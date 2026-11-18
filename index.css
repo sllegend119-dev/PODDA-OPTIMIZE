@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --podda-green: #39ff78;
+    --podda-green-dim: #1ea34d;
+    --podda-dark: #050b07;
+    --podda-surface: #0a140e;
+    --podda-border: rgba(57, 255, 120, 0.18);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #040805;
+    color: #e2f5e8;
+    overflow-x: hidden;
+    selection-background-color: #39ff78;
+    selection-color: #040805;
+  }
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom cyber scanline and subtle glow utilities */
+.cyber-glow {
+  box-shadow: 0 0 25px rgba(57, 255, 120, 0.18), inset 0 0 15px rgba(57, 255, 120, 0.05);
+}
+
+.cyber-glow-strong {
+  box-shadow: 0 0 35px rgba(57, 255, 120, 0.35), 0 0 70px rgba(57, 255, 120, 0.15);
+}
+
+.cyber-border {
+  border: 1px solid rgba(57, 255, 120, 0.2);
+}
+
+.cyber-card {
+  background: linear-gradient(145deg, rgba(12, 25, 17, 0.88), rgba(6, 12, 8, 0.94));
+  border: 1px solid rgba(57, 255, 120, 0.16);
+  backdrop-filter: blur(12px);
+}
+
+/* Subtle holographic grid background */
+.cyber-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(57, 255, 120, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(57, 255, 120, 0.03) 1px, transparent 1px);
+}
+
+/* Custom scrollbar for cyber sleek feeling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #040805;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(57, 255, 120, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(57, 255, 120, 0.6);
+}
+
+
+/* PODDA animated brand emblem */
+.podda-emblem-stage {
+  position: relative;
+  isolation: isolate;
+  width: min(72vw, 330px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  animation: podda-float 5s ease-in-out infinite;
+}
+.podda-emblem-image {
+  position: relative;
+  z-index: 2;
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 18px rgba(57,255,120,.35));
+  animation: podda-logo-pulse 3.8s ease-in-out infinite;
+}
+.podda-emblem-orbit {
+  position: absolute;
+  z-index: 1;
+  inset: 2%;
+  border: 2px solid rgba(57,255,120,.72);
+  border-left-color: transparent;
+  border-right-color: rgba(57,255,120,.18);
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(57,255,120,.35), inset 0 0 18px rgba(57,255,120,.12);
+  animation: podda-orbit 12s linear infinite;
+}
+.podda-emblem-glow {
+  position: absolute;
+  z-index: 0;
+  inset: 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(57,255,120,.2), rgba(57,255,120,.04) 52%, transparent 72%);
+  filter: blur(10px);
+  animation: podda-glow 3.5s ease-in-out infinite alternate;
+}
+.podda-emblem-spark {
+  position: absolute;
+  z-index: 3;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #baffce;
+  box-shadow: 0 0 9px 3px rgba(57,255,120,.75);
+}
+.podda-spark-one { top: 15%; left: 17%; animation: podda-spark 2.6s ease-in-out infinite; }
+.podda-spark-two { top: 28%; right: 9%; animation: podda-spark 3.2s .7s ease-in-out infinite; }
+.podda-spark-three { bottom: 18%; left: 13%; animation: podda-spark 2.9s 1.1s ease-in-out infinite; }
+@keyframes podda-float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-9px) } }
+@keyframes podda-logo-pulse { 0%,100% { filter: drop-shadow(0 0 14px rgba(57,255,120,.25)); } 50% { filter: drop-shadow(0 0 28px rgba(57,255,120,.55)); } }
+@keyframes podda-orbit { to { transform: rotate(360deg); } }
+@keyframes podda-glow { from { opacity: .55; transform: scale(.94); } to { opacity: 1; transform: scale(1.08); } }
+@keyframes podda-spark { 0%,100% { opacity: .25; transform: scale(.65); } 50% { opacity: 1; transform: scale(1.25); } }
+@media (prefers-reduced-motion: reduce) {
+  .podda-emblem-stage, .podda-emblem-image, .podda-emblem-orbit,
+  .podda-emblem-glow, .podda-emblem-spark { animation: none !important; }
+}
+
+/* PODDA OPTIMIZE — premium 3D / prism finish */
+:root {
+  --podda-lime: #7dff35;
+  --podda-mint: #00ffd1;
+  --podda-cyan: #25cfff;
+  --podda-gold: #ffd76a;
+  --podda-violet: #9b70ff;
+  --podda-red: #ff3d72;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(ellipse at 50% 8%, rgba(31, 255, 111, .12), transparent 34rem),
+    radial-gradient(ellipse at 8% 45%, rgba(0, 205, 255, .075), transparent 30rem),
+    radial-gradient(ellipse at 92% 70%, rgba(155, 112, 255, .07), transparent 28rem),
+    #030706;
+}
+
+/* Deep perspective stage with multiple metallic holographic rings */
+.podda-emblem-stage {
+  width: min(78vw, 390px);
+  transform-style: preserve-3d;
+  perspective: 1100px;
+  filter: drop-shadow(0 28px 42px rgba(0,0,0,.62));
+  animation: podda-float-3d 6.5s cubic-bezier(.45,0,.55,1) infinite;
+}
+.podda-emblem-stage::before,
+.podda-emblem-stage::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+.podda-emblem-stage::before {
+  inset: -3.5%;
+  border: 1px solid rgba(125,255,53,.78);
+  box-shadow: 0 0 8px rgba(125,255,53,.85), 0 0 28px rgba(0,255,209,.32), inset 0 0 22px rgba(0,255,209,.2);
+  transform: translateZ(-24px) rotateX(67deg);
+  animation: podda-ring-tilt 10s linear infinite;
+}
+.podda-emblem-stage::after {
+  inset: 5%;
+  border: 1px dashed rgba(37,207,255,.55);
+  box-shadow: 0 0 24px rgba(37,207,255,.18), inset 0 0 22px rgba(155,112,255,.12);
+  transform: translateZ(-12px) rotateX(67deg) rotateZ(22deg);
+  animation: podda-ring-reverse 18s linear infinite;
+}
+.podda-emblem-image {
+  width: 87%;
+  height: 87%;
+  border-radius: 50%;
+  transform: translateZ(38px) rotateY(-5deg) rotateX(3deg);
+  backface-visibility: hidden;
+  box-shadow: 0 18px 34px rgba(0,0,0,.55), 0 0 26px rgba(57,255,120,.28);
+  animation: podda-image-3d 7s ease-in-out infinite;
+}
+.podda-emblem-orbit {
+  inset: 0;
+  border: 2px solid transparent;
+  background: linear-gradient(#030706,#030706) padding-box,
+    conic-gradient(from 0deg, #7dff35, #00ffd1, #25cfff, #9b70ff, #ffd76a, #7dff35) border-box;
+  box-shadow: 0 0 20px rgba(125,255,53,.42), 0 0 48px rgba(0,255,209,.18), inset 0 0 26px rgba(37,207,255,.12);
+  transform: translateZ(14px);
+  animation: podda-orbit 16s linear infinite;
+}
+.podda-emblem-glow {
+  inset: 3%;
+  background: conic-gradient(from 90deg, rgba(125,255,53,.18), rgba(0,255,209,.15), rgba(37,207,255,.16), rgba(155,112,255,.14), rgba(255,215,106,.12), rgba(125,255,53,.18));
+  filter: blur(24px);
+  transform: translateZ(-30px) scale(1.1);
+  animation: podda-prism-glow 5s ease-in-out infinite alternate;
+}
+.podda-emblem-spark {
+  width: 5px;
+  height: 5px;
+  background: #eaffff;
+  box-shadow: 0 0 7px 3px #7dff35, 0 0 18px 5px rgba(0,255,209,.7);
+}
+.podda-spark-one { top: 10%; left: 13%; }
+.podda-spark-two { top: 23%; right: 5%; background: #fff1b5; box-shadow: 0 0 8px 3px #ffd76a, 0 0 18px rgba(255,215,106,.7); }
+.podda-spark-three { bottom: 12%; left: 8%; background: #dffaff; box-shadow: 0 0 8px 3px #25cfff, 0 0 18px rgba(37,207,255,.7); }
+
+/* Give the hero title a dimensional metallic/prismatic edge */
+.podda-emblem-stage + div + h1 { text-shadow: 0 3px 0 rgba(0,0,0,.55), 0 0 28px rgba(57,255,120,.12); }
+.podda-emblem-stage ~ h1 span {
+  background-image: linear-gradient(100deg, #a8ff63 0%, #00ffd1 28%, #5ed8ff 52%, #b99aff 72%, #ffe18a 100%);
+  filter: drop-shadow(0 0 14px rgba(0,255,209,.22));
+}
+
+/* Glass-metal cards gain depth without changing layout or content */
+.cyber-card,
+.podda-emblem-stage ~ div.grid > div,
+section#3d-inspector .cyber-card {
+  box-shadow: 0 14px 34px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.075);
+  transform-style: preserve-3d;
+}
+.cyber-card:hover {
+  border-color: rgba(0,255,209,.48);
+  box-shadow: 0 18px 42px rgba(0,0,0,.38), 0 0 24px rgba(0,255,209,.1), inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+/* High quality multi-colour edge lighting for controls */
+button:not(:disabled) { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible {
+  outline: 2px solid #00ffd1;
+  outline-offset: 4px;
+}
+header.sticky {
+  box-shadow: 0 10px 34px rgba(0,0,0,.35), 0 1px 0 rgba(0,255,209,.12);
+}
+
+@keyframes podda-float-3d {
+  0%,100% { transform: translateY(0) rotateX(0deg) rotateY(-1deg); }
+  50% { transform: translateY(-12px) rotateX(2deg) rotateY(2deg); }
+}
+@keyframes podda-image-3d {
+  0%,100% { transform: translateZ(38px) rotateY(-5deg) rotateX(3deg) scale(1); }
+  50% { transform: translateZ(54px) rotateY(4deg) rotateX(-2deg) scale(1.018); }
+}
+@keyframes podda-ring-tilt { to { transform: translateZ(-24px) rotateX(67deg) rotateZ(360deg); } }
+@keyframes podda-ring-reverse { to { transform: translateZ(-12px) rotateX(67deg) rotateZ(-338deg); } }
+@keyframes podda-prism-glow { from { opacity:.55; transform:translateZ(-30px) scale(.94) rotate(0deg); } to { opacity:1; transform:translateZ(-30px) scale(1.13) rotate(18deg); } }
+
+@media (max-width: 640px) {
+  .podda-emblem-stage { width: min(82vw, 340px); margin-top: 4px; }
+  .podda-emblem-stage::before { inset: -2%; }
+  .podda-emblem-stage::after { inset: 7%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .podda-emblem-stage, .podda-emblem-stage::before, .podda-emblem-stage::after,
+  .podda-emblem-image, .podda-emblem-orbit, .podda-emblem-glow,
+  .podda-emblem-spark { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
